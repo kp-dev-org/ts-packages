@@ -1,8 +1,11 @@
-import { OpenAPISchemaParser } from "../helpers/openapi-schema-parser";
-export class RouteDiscoveryService {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.RouteDiscoveryService = void 0;
+const openapi_schema_parser_1 = require("../helpers/openapi-schema-parser");
+class RouteDiscoveryService {
     constructor() {
         this.routePrefix = "routes";
-        this.openapiSchemaFetch = new OpenAPISchemaParser();
+        this.openapiSchemaFetch = new openapi_schema_parser_1.OpenAPISchemaParser();
     }
     async registerServiceRoute(services) {
         for (const service of services) {
@@ -29,3 +32,4 @@ export class RouteDiscoveryService {
         return routes;
     }
 }
+exports.RouteDiscoveryService = RouteDiscoveryService;

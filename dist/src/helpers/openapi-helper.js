@@ -1,3 +1,6 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.createEmptyOpenAPIDocument = exports.fetchAndMergeOpenApiDocs = exports.mergeOpenApiDocs = void 0;
 /**
  * Merges multiple OpenAPI documents into a single unified document
  *
@@ -16,7 +19,7 @@
  * });
  * ```
  */
-export function mergeOpenApiDocs(docs, options = {}) {
+function mergeOpenApiDocs(docs, options = {}) {
     if (docs.length === 0) {
         throw new Error('Cannot merge empty array of OpenAPI documents');
     }
@@ -150,6 +153,7 @@ export function mergeOpenApiDocs(docs, options = {}) {
     }
     return merged;
 }
+exports.mergeOpenApiDocs = mergeOpenApiDocs;
 /**
  * Merges OpenAPI components, handling potential naming conflicts
  */
@@ -220,7 +224,7 @@ function isValidOpenAPIDocument(obj) {
  * });
  * ```
  */
-export async function fetchAndMergeOpenApiDocs(urls, options = {}, fetchOptions = {}) {
+async function fetchAndMergeOpenApiDocs(urls, options = {}, fetchOptions = {}) {
     const { timeout = 5000, ...restFetchOptions } = fetchOptions;
     const docs = await Promise.all(urls.map(async (url) => {
         const controller = new AbortController();
@@ -249,10 +253,11 @@ export async function fetchAndMergeOpenApiDocs(urls, options = {}, fetchOptions 
     }));
     return mergeOpenApiDocs(docs, options);
 }
+exports.fetchAndMergeOpenApiDocs = fetchAndMergeOpenApiDocs;
 /**
  * Utility function to create a basic OpenAPI document structure
  */
-export function createEmptyOpenAPIDocument(title = "API Documentation", version = "1.0.0") {
+function createEmptyOpenAPIDocument(title = "API Documentation", version = "1.0.0") {
     return {
         openapi: "3.0.0",
         info: {
@@ -262,6 +267,7 @@ export function createEmptyOpenAPIDocument(title = "API Documentation", version 
         paths: {}
     };
 }
+exports.createEmptyOpenAPIDocument = createEmptyOpenAPIDocument;
 /**
  * Removes required userId header parameters from all operations in an OpenAPI document
  * This function handles both inline parameters and referenced parameters

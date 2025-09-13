@@ -1,7 +1,11 @@
-import { BaseService } from "./base";
-export class HttpService extends BaseService {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ApiGatewayService = exports.HttpService = void 0;
+const base_1 = require("./base");
+class HttpService extends base_1.BaseService {
 }
-export class ApiGatewayService extends HttpService {
+exports.HttpService = HttpService;
+class ApiGatewayService extends HttpService {
     constructor(serviceInfo, serviceDiscovery, routeDiscoveryService) {
         super(serviceInfo, serviceDiscovery);
         this.serviceInfo = serviceInfo;
@@ -9,3 +13,4 @@ export class ApiGatewayService extends HttpService {
         this.serviceDiscovery = serviceDiscovery;
     }
 }
+exports.ApiGatewayService = ApiGatewayService;

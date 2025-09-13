@@ -1,6 +1,8 @@
-import { ApiGatewayService, ServiceDiscovery } from "../core";
-import { RouteDiscoveryService } from "../core/route-discovery";
-class KPGateWay extends ApiGatewayService {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const core_1 = require("../core");
+const route_discovery_1 = require("../core/route-discovery");
+class KPGateWay extends core_1.ApiGatewayService {
     getHttpServer() {
         throw new Error("Method not implemented.");
     }
@@ -32,7 +34,7 @@ class KPGateWay extends ApiGatewayService {
         throw new Error("Method not implemented.");
     }
 }
-class RouteDiscoveryServiceImpl extends RouteDiscoveryService {
+class RouteDiscoveryServiceImpl extends route_discovery_1.RouteDiscoveryService {
     getAllRoutes() {
         throw new Error("Method not implemented.");
     }
@@ -43,7 +45,7 @@ class RouteDiscoveryServiceImpl extends RouteDiscoveryService {
         throw new Error("Method not implemented.");
     }
 }
-class ServiceDiscoveryImpl extends ServiceDiscovery {
+class ServiceDiscoveryImpl extends core_1.ServiceDiscovery {
     registerService(serviceInfo) {
         throw new Error("Method not implemented.");
     }

@@ -1,4 +1,7 @@
-export class OpenAPISchemaParser {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.OpenAPISchemaParser = void 0;
+class OpenAPISchemaParser {
     constructor() {
     }
     /**
@@ -121,3 +124,4 @@ export class OpenAPISchemaParser {
             typeof data.paths === 'object');
     }
 }
+exports.OpenAPISchemaParser = OpenAPISchemaParser;

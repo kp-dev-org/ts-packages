@@ -1,4 +1,7 @@
-export class BaseService {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BaseService = void 0;
+class BaseService {
     constructor(serviceInfo, serviceDiscovery) {
         this.serviceInfo = serviceInfo;
         this.serviceDiscovery = serviceDiscovery;
@@ -23,3 +26,4 @@ export class BaseService {
         return this.serviceInfo;
     }
 }
+exports.BaseService = BaseService;

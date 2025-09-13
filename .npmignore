@@ -1,0 +1,6 @@
+tsconfig.json
+tsconfig.tsbuildinfo
+*.log
+node_modules/
+.env
+.env.*

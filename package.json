@@ -1,0 +1,22 @@
+{
+  "name": "@kp-dev-org/ts-packages",
+  "version": "1.0.0",
+  "description": "TypeScript package for interfaces, abstract classes, and validation schemes.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "clean": "rm -rf dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ioredis": "^5.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.3"
+  }
+}

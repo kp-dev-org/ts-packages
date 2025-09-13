@@ -1,6 +1,6 @@
 export * from "./connectivity";
-export * from "./servicesTypes";
-export * from "./protocolTypes";
-export * from "./routeTypes";
-export * from "./openapiTypes";
+export * from "./services-types";
+export * from "./protocol-types";
+export * from "./route-types";
+export * from "./openapi-types";
 //# sourceMappingURL=index.d.ts.map

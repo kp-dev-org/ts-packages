@@ -1,5 +1,5 @@
 import { ApiGatewayService, ServiceDiscovery } from "../core";
-import { RouteDiscoveryService } from "../core/routeDiscovery";
+import { RouteDiscoveryService } from "../core/route-discovery";
 class KPGateWay extends ApiGatewayService {
     getHttpServer() {
         throw new Error("Method not implemented.");

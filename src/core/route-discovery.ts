@@ -1,6 +1,6 @@
-import { OpenAPISchemaParser } from "../helpers/openapiSchemaParser";
+import { OpenAPISchemaParser } from "../helpers/openapi-schema-parser";
 import { HttpServiceMetadata } from "../types";
-import { HttpMethods, Route } from "../types/routeTypes";
+import { HttpMethods, Route } from "../types/route-types";
 
 export abstract class RouteDiscoveryService {
     private openapiSchemaFetch: OpenAPISchemaParser;

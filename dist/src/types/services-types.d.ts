@@ -1,5 +1,4 @@
-import { Route } from "./routeTypes";
-
+import { Route } from "./route-types";
 export interface ServiceMetadata {
     id: string;
     name: string;
@@ -7,16 +6,14 @@ export interface ServiceMetadata {
     version?: string;
     host: string;
     metadata?: Record<string, any>;
-
 }
-
 export interface HttpServiceMetadata extends ServiceMetadata {
     httpPort: number;
     httpsPort?: number;
     apiSpecificationUrl: string;
     extraRoutes: Array<Route>;
 }
-
 export interface GrpcServiceMetadata extends ServiceMetadata {
     grpcPort: number;
 }
+//# sourceMappingURL=services-types.d.ts.map

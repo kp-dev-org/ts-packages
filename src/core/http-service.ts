@@ -1,8 +1,8 @@
 import { Server } from "node:http";
 import { HttpServiceMetadata, ServiceMetadata } from "../types";
 import { BaseService } from "./base";
-import { RouteDiscoveryService } from "./routeDiscovery";
-import { ServiceDiscovery } from "./serviceDiscovery";
+import { RouteDiscoveryService } from "./route-discovery";
+import { ServiceDiscovery } from "./service-discovery";
 
 export abstract class HttpService<T extends ServiceMetadata> extends BaseService<T> {
 

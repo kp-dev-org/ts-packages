@@ -1,4 +1,4 @@
 export * from "./base";
-export * from "./serviceDiscovery";
-export * from "./httpService";
-export * from "./routeDiscovery";
+export * from "./service-discovery";
+export * from "./http-service";
+export * from "./route-discovery";

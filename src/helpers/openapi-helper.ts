@@ -1,4 +1,4 @@
-import { OpenAPIDocument, MergeOptions } from "../types/openapiTypes";
+import { OpenAPIDocument, MergeOptions } from "../types/openapi-types";
 
 /**
  * Merges multiple OpenAPI documents into a single unified document

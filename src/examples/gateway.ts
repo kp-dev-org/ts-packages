@@ -1,6 +1,6 @@
 import { Server } from "http";
 import { ApiGatewayService, ServiceDiscovery } from "../core";
-import { RouteDiscoveryService } from "../core/routeDiscovery";
+import { RouteDiscoveryService } from "../core/route-discovery";
 import { HttpServiceMetadata, Route, HttpMethods, RedisConfig, ServiceMetadata } from "../types";
 
 class KPGateWay extends ApiGatewayService {

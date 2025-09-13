@@ -1,5 +1,5 @@
-import { ServiceMetadata } from "../types/servicesTypes";
-import { ServiceDiscovery } from "./serviceDiscovery";
+import { ServiceMetadata } from "../types/services-types";
+import { ServiceDiscovery } from "./service-discovery";
 export declare abstract class BaseService<T extends ServiceMetadata> {
     serviceInfo: T;
     serviceDiscovery: ServiceDiscovery;

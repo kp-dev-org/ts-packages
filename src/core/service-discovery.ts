@@ -1,5 +1,5 @@
 import { RedisConfig } from '../types/connectivity';
-import { ServiceMetadata } from '../types/servicesTypes';
+import { ServiceMetadata } from '../types/services-types';
 
 export abstract class ServiceDiscovery {
     abstract registerService<T extends ServiceMetadata>(serviceInfo: T): Promise<void>;

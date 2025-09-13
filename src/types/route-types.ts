@@ -1,4 +1,4 @@
-import { HttpProtocols } from "./protocolTypes";
+import { HttpProtocols } from "./protocol-types";
 
 export type HttpMethods = 'GET' | 'POST' | 'PUT' | 'DELETE' | 'PATCH' | 'OPTIONS' | 'HEAD';
 export type Route = {

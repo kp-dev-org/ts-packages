@@ -14,7 +14,7 @@ export abstract class HttpService<T extends ServiceMetadata> extends BaseService
 }
 
 export abstract class ApiGatewayService extends HttpService<ServiceMetadata> {
-    private routeDiscoveryService: RouteDiscoveryService;
+    public routeDiscoveryService: RouteDiscoveryService;
     public serviceDiscovery: ServiceDiscovery;
     constructor(public serviceInfo: HttpServiceMetadata,
         serviceDiscovery: ServiceDiscovery,

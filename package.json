@@ -1,6 +1,6 @@
 {
   "name": "kp-ts-utilities",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "TypeScript package for interfaces, abstract classes, and validation schemes.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

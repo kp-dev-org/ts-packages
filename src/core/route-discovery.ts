@@ -3,7 +3,7 @@ import { HttpServiceMetadata } from "../types";
 import { HttpMethods, Route } from "../types/route-types";
 
 export abstract class RouteDiscoveryService {
-    private routePrefix: string = "routes";
+    public readonly routePrefix: string = "routes";
     private openapiSchemaFetch: OpenAPISchemaParser;
     constructor() {
         this.openapiSchemaFetch = new OpenAPISchemaParser();

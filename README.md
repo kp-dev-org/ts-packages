@@ -297,5 +297,4 @@ ISC
 This package serves as the foundation for all microservices development in the organization. Contributions should maintain backward compatibility and follow established patterns.
 
 
-pnpm build && git add . && git commit -m "seom" && git tag -a v1.0.4 -m "new versions" && git push && git push --t
-ags
+pnpm build && git add . && git commit -m "seom" && git tag -a v1.0.5 -m "new versions" && git push && git push --tags

@@ -1,6 +1,7 @@
 import { OpenAPISchemaParser } from "../helpers/openapi-schema-parser";
 export class RouteDiscoveryService {
     constructor() {
+        this.routePrefix = "routes";
         this.openapiSchemaFetch = new OpenAPISchemaParser();
     }
     async registerServiceRoute(services) {
@@ -15,7 +16,7 @@ export class RouteDiscoveryService {
         return this._getRouteKey(method, path);
     }
     _getRouteKey(method, path) {
-        return `routes:${method}:${path}`;
+        return `${this.routePrefix}:${method}:${path}`;
     }
     async discoverRoutesFromServiceOpenapiSpec(service) {
         // abstract getRouteService

@@ -1,6 +1,7 @@
 import { HttpServiceMetadata } from "../types";
 import { HttpMethods, Route } from "../types/route-types";
 export declare abstract class RouteDiscoveryService {
+    private routePrefix;
     private openapiSchemaFetch;
     constructor();
     registerServiceRoute(services: HttpServiceMetadata[]): Promise<void>;

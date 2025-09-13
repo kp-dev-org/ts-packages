@@ -1,6 +1,6 @@
 {
   "name": "@kp-dev-org/ts-packages",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "TypeScript package for interfaces, abstract classes, and validation schemes.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

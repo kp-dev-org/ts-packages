@@ -31,13 +31,16 @@ export abstract class RouteDiscoveryService {
     abstract findRoute(method: HttpMethods, path: string): Promise<Route | null>;
 
     protected async discoverRoutesFromServiceOpenapiSpec(service: HttpServiceMetadata): Promise<Route[]> {
-        // abstract getRouteService
+        const schema = service.httpsPort ? "https" : 'http'
+        const port = service.httpsPort ? service.httpPort : service.httpsPort
+        const baseUrl = `${schema}://${service.host}:${port}/${service.apiSpecificationUrl}`
+        console.log(baseUrl)
         const routes = await this.openapiSchemaFetch.fetchAndExtractRoutes(
             {
                 protocol: "http",
                 serviceName: service.name,
                 timeout: 5000,
-                url: service.apiSpecificationUrl
+                url: baseUrl
             }
         )
         return routes;

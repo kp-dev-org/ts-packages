@@ -8,6 +8,7 @@ export abstract class BaseService<T extends ServiceMetadata> {
 
 
     ) { }
+    
     protected async registerService(): Promise<void> {
         // Logic to register the service, e.g., with a service registry
         await this.serviceDiscovery.registerService(this.serviceInfo);

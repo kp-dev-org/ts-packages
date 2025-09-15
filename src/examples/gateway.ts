@@ -4,6 +4,9 @@ import { RouteDiscoveryService } from "../core/route-discovery";
 import { HttpServiceMetadata, Route, HttpMethods, RedisConfig, ServiceMetadata } from "../types";
 
 class KPGateWay extends ApiGatewayService {
+    setupHealthCheckEndpoint(): void {
+        throw new Error("Method not implemented.");
+    }
     getHttpServer(): Promise<Server> {
         throw new Error("Method not implemented.");
     }

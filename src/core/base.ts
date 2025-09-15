@@ -2,6 +2,7 @@ import { ServiceMetadata } from "../types/services-types";
 import { ServiceDiscovery } from "./service-discovery";
 
 export abstract class BaseService<T extends ServiceMetadata> {
+
     private shutdownHooks: Array<() => Promise<void> | void> = [];
     private starHooks: Array<() => Promise<void> | void> = [];
     constructor(public serviceInfo: T, public serviceDiscovery: ServiceDiscovery
@@ -13,6 +14,8 @@ export abstract class BaseService<T extends ServiceMetadata> {
         // Logic to register the service, e.g., with a service registry
         await this.serviceDiscovery.registerService(this.serviceInfo);
     }
+
+    abstract setupHealthCheckEndpoint(): void;
 
     public addShutdownHook(hook: () => Promise<void> | void): void {
         this.shutdownHooks.push(hook);

@@ -7,6 +7,7 @@ export declare abstract class BaseService<T extends ServiceMetadata> {
     private starHooks;
     constructor(serviceInfo: T, serviceDiscovery: ServiceDiscovery);
     protected registerService(): Promise<void>;
+    abstract setupHealthCheckEndpoint(): void;
     addShutdownHook(hook: () => Promise<void> | void): void;
     abstract start(): Promise<void>;
     shutdown(): Promise<void>;

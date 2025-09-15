@@ -31,8 +31,12 @@ export abstract class RouteDiscoveryService {
     abstract findRoute(method: HttpMethods, path: string): Promise<Route | null>;
 
     protected async discoverRoutesFromServiceOpenapiSpec(service: HttpServiceMetadata): Promise<Route[]> {
-        const schema = service.httpsPort ? "https" : 'http'
-        const port = service.httpsPort ? service.httpPort : service.httpsPort
+        let schema = "https"
+        let port = service.httpsPort;
+        if (!port) {
+            port = service.httpPort;
+            schema = "http"
+        }
         const baseUrl = `${schema}://${service.host}:${port}/${service.apiSpecificationUrl}`
         console.log(baseUrl)
         const routes = await this.openapiSchemaFetch.fetchAndExtractRoutes(

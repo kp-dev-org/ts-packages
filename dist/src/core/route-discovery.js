@@ -22,8 +22,12 @@ class RouteDiscoveryService {
         return `${this.routePrefix}:${method}:${path}`;
     }
     async discoverRoutesFromServiceOpenapiSpec(service) {
-        const schema = service.httpsPort ? "https" : 'http';
-        const port = service.httpsPort ? service.httpPort : service.httpsPort;
+        let schema = "https";
+        let port = service.httpsPort;
+        if (!port) {
+            port = service.httpPort;
+            schema = "http";
+        }
         const baseUrl = `${schema}://${service.host}:${port}/${service.apiSpecificationUrl}`;
         console.log(baseUrl);
         const routes = await this.openapiSchemaFetch.fetchAndExtractRoutes({

@@ -18,3 +18,4 @@ __exportStar(require("./src/core/index"), exports);
 __exportStar(require("./src/types/index"), exports);
 __exportStar(require("./src/helpers/openapi-helper"), exports);
 __exportStar(require("./src/helpers/openapi-schema-parser"), exports);
+__exportStar(require("./src/helpers/network"), exports);

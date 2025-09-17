@@ -11,6 +11,12 @@ export declare abstract class HttpService<T extends ServiceMetadata> extends Bas
     abstract getOpenapiSpecUrl(): Promise<void> | void;
     abstract getHttpServer(): Promise<Server>;
 }
+export declare abstract class MicroService extends HttpService<ServiceMetadata> {
+    serviceInfo: HttpServiceMetadata;
+    routeDiscoveryService: RouteDiscoveryService;
+    serviceDiscovery: ServiceDiscovery;
+    constructor(serviceInfo: HttpServiceMetadata, serviceDiscovery: ServiceDiscovery, routeDiscoveryService: RouteDiscoveryService);
+}
 export declare abstract class ApiGatewayService extends HttpService<ServiceMetadata> {
     serviceInfo: HttpServiceMetadata;
     routeDiscoveryService: RouteDiscoveryService;

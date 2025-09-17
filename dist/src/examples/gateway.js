@@ -3,6 +3,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("../core");
 const route_discovery_1 = require("../core/route-discovery");
 class KPGateWay extends core_1.ApiGatewayService {
+    setupRouteDispatching() {
+        throw new Error("Method not implemented.");
+    }
     setupHealthCheckEndpoint() {
         throw new Error("Method not implemented.");
     }

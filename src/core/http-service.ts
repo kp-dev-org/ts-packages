@@ -25,7 +25,7 @@ export abstract class ApiGatewayService extends HttpService<ServiceMetadata> {
     }
     abstract startServiceDiscoveryJob(): Promise<void>;
     abstract startRouteDiscoveryJob(interval: number): Promise<void>;
-
+    abstract setupRouteDispatching(): Promise<void> | void;
     abstract startHealthCheckJob(interval: number): Promise<void>;
 }
 

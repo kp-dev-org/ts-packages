@@ -18,6 +18,7 @@ export declare abstract class ApiGatewayService extends HttpService<ServiceMetad
     constructor(serviceInfo: HttpServiceMetadata, serviceDiscovery: ServiceDiscovery, routeDiscoveryService: RouteDiscoveryService);
     abstract startServiceDiscoveryJob(): Promise<void>;
     abstract startRouteDiscoveryJob(interval: number): Promise<void>;
+    abstract setupRouteDispatching(): Promise<void> | void;
     abstract startHealthCheckJob(interval: number): Promise<void>;
 }
 //# sourceMappingURL=http-service.d.ts.map

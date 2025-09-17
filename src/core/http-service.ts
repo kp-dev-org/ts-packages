@@ -14,14 +14,10 @@ export abstract class HttpService<T extends ServiceMetadata> extends BaseService
 
 
 export abstract class MicroService extends HttpService<ServiceMetadata> {
-    public routeDiscoveryService: RouteDiscoveryService;
-    public serviceDiscovery: ServiceDiscovery;
+
     constructor(public serviceInfo: HttpServiceMetadata,
-        serviceDiscovery: ServiceDiscovery,
-        routeDiscoveryService: RouteDiscoveryService) {
-        super(serviceInfo, serviceDiscovery)
-        this.routeDiscoveryService = routeDiscoveryService;
-        this.serviceDiscovery = serviceDiscovery;
+       ) {
+        super(serviceInfo)
     }
 }
 
@@ -31,7 +27,7 @@ export abstract class ApiGatewayService extends HttpService<ServiceMetadata> {
     constructor(public serviceInfo: HttpServiceMetadata,
         serviceDiscovery: ServiceDiscovery,
         routeDiscoveryService: RouteDiscoveryService) {
-        super(serviceInfo, serviceDiscovery)
+        super(serviceInfo)
         this.routeDiscoveryService = routeDiscoveryService;
         this.serviceDiscovery = serviceDiscovery;
     }

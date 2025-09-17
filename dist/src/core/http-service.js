@@ -6,17 +6,15 @@ class HttpService extends base_1.BaseService {
 }
 exports.HttpService = HttpService;
 class MicroService extends HttpService {
-    constructor(serviceInfo, serviceDiscovery, routeDiscoveryService) {
-        super(serviceInfo, serviceDiscovery);
+    constructor(serviceInfo) {
+        super(serviceInfo);
         this.serviceInfo = serviceInfo;
-        this.routeDiscoveryService = routeDiscoveryService;
-        this.serviceDiscovery = serviceDiscovery;
     }
 }
 exports.MicroService = MicroService;
 class ApiGatewayService extends HttpService {
     constructor(serviceInfo, serviceDiscovery, routeDiscoveryService) {
-        super(serviceInfo, serviceDiscovery);
+        super(serviceInfo);
         this.serviceInfo = serviceInfo;
         this.routeDiscoveryService = routeDiscoveryService;
         this.serviceDiscovery = serviceDiscovery;

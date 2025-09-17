@@ -5,15 +5,12 @@ export abstract class BaseService<T extends ServiceMetadata> {
 
     private shutdownHooks: Array<() => Promise<void> | void> = [];
     private starHooks: Array<() => Promise<void> | void> = [];
-    constructor(public serviceInfo: T, public serviceDiscovery: ServiceDiscovery
+    constructor(public serviceInfo: T
 
 
     ) { }
-    
-    protected async registerService(): Promise<void> {
-        // Logic to register the service, e.g., with a service registry
-        await this.serviceDiscovery.registerService(this.serviceInfo);
-    }
+
+    abstract registerService(): Promise<void>;
 
     abstract setupHealthCheckEndpoint(): void;
 
@@ -25,8 +22,8 @@ export abstract class BaseService<T extends ServiceMetadata> {
 
     public async shutdown(): Promise<void> {
 
-        const key = this.serviceDiscovery.getServiceKey(this.serviceInfo);
-        await this.serviceDiscovery.unRegisterService(key);
+        // const key = this.serviceDiscovery.getServiceKey(this.serviceInfo);
+        // await this.serviceDiscovery.unRegisterService(key);
         for (const hook of this.shutdownHooks) {
             await hook();
         }
